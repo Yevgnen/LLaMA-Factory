@@ -458,5 +458,8 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "dispatcher": {
+    "file_name": "dispatcher.json"
   }
 }
