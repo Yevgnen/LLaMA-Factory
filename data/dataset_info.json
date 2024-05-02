@@ -459,7 +459,10 @@
     },
     "folder": "python"
   },
-  "dispatcher": {
+  "dispatcher_train": {
     "file_name": "datasets_train.json"
+  },
+  "dispatcher_test": {
+    "file_name": "datasets_test.json"
   }
 }
