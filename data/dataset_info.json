@@ -460,6 +460,6 @@
     "folder": "python"
   },
   "dispatcher": {
-    "file_name": "dispatcher.json"
+    "file_name": "datasets_train.json"
   }
 }
