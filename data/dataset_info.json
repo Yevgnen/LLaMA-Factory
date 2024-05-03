@@ -464,5 +464,8 @@
   },
   "dispatcher_test": {
     "file_name": "datasets_test.json"
+  },
+  "reply_to_train": {
+    "file_name": "reply_to_train.json"
   }
 }
