@@ -14,7 +14,7 @@ CUDA_VISIBLE_DEVICES=0,1 rye run accelerate launch \
     --output_dir ../../saves/phi3-128k/lora/sft \
     --overwrite_cache \
     --overwrite_output_dir \
-    --cutoff_len 4096 \
+    --cutoff_len 100_000 \
     --preprocessing_num_workers 16 \
     --per_device_train_batch_size 8 \
     --per_device_eval_batch_size 4 \
