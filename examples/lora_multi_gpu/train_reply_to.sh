@@ -5,16 +5,17 @@ CUDA_VISIBLE_DEVICES=0,1 rye run accelerate launch \
     ../../src/train_bash.py \
     --stage sft \
     --do_train \
-    --model_name_or_path microsoft/Phi-3-mini-128k-instruct \
+    --model_name_or_path microsoft/Phi-3-mini-4k-instruct \
     --dataset reply_to_train \
     --dataset_dir ../../data \
     --template phi \
     --finetuning_type lora \
     --lora_target qkv_proj \
-    --output_dir ../../saves/phi3-128k/lora/sft \
+    --output_dir ../../saves/phi3/lora/sft \
     --overwrite_cache \
     --overwrite_output_dir \
-    --cutoff_len 100_000 \
+    --cutoff_len 4096 \
+    --reserved_label_len 32 \
     --preprocessing_num_workers 16 \
     --per_device_train_batch_size 8 \
     --per_device_eval_batch_size 4 \
@@ -22,13 +23,13 @@ CUDA_VISIBLE_DEVICES=0,1 rye run accelerate launch \
     --lr_scheduler_type cosine \
     --logging_steps 10 \
     --warmup_steps 20 \
-    --save_steps 100 \
-    --eval_steps 100 \
+    --save_steps 200 \
+    --eval_steps 200 \
     --evaluation_strategy steps \
     --load_best_model_at_end \
     --learning_rate 5e-5 \
     --num_train_epochs 10.0 \
-    --val_size 0.1 \
+    --val_size 0.05 \
     --ddp_timeout 180000000 \
     --plot_loss \
     --fp16
